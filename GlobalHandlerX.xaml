@@ -14,7 +14,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1109,1329</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>968,1332</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GlobalHandlerX</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="54">
@@ -83,7 +83,7 @@
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="This sequence steps in during execution when the project encounters an unmanaged error.&#xA;&#xA;Important: Arguments 'errorInfo' and 'result' should not be removed." DisplayName="GlobalHandlerX" sap:VirtualizedContainerService.HintSize="978,1264" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="This sequence steps in during execution when the project encounters an unmanaged error.&#xA;&#xA;Important: Arguments 'errorInfo' and 'result' should not be removed." DisplayName="GlobalHandlerX" sap:VirtualizedContainerService.HintSize="978,1267" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Default="RuntimeExecutionError_Template.html" Modifiers="ReadOnly" Name="TemplateFilePath" />
       <Variable x:TypeArguments="x:String" Name="ErrorTemplate" />
@@ -120,27 +120,27 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">370,124.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:Size x:Key="ShapeSize">200,52</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">470,175.5 470,225.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Error" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[errorInfo.Exception.ToString]" />
+      <ui:LogMessage DisplayName="Log Error" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[errorInfo.Exception.ToString]" />
       <FlowStep.Next>
         <FlowStep x:Name="__ReferenceID10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">370,225.5</av:Point>
-              <av:Size x:Key="ShapeSize">200,66</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">470,291.5 470,350</av:PointCollection>
+              <av:Size x:Key="ShapeSize">200,68</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">470,293.5 470,350</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Get template" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_51">
+          <Sequence DisplayName="Get template" sap:VirtualizedContainerService.HintSize="426,272" sap2010:WorkflowViewState.IdRef="Sequence_51">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ReadTextFile Content="[ErrorTemplate]" DisplayName="Read Error Template" FileName="[TemplateFilePath]" sap:VirtualizedContainerService.HintSize="384,79" sap2010:WorkflowViewState.IdRef="ReadTextFile_6" />
+            <ui:ReadTextFile Content="[ErrorTemplate]" DisplayName="Read Error Template" FileName="[TemplateFilePath]" sap:VirtualizedContainerService.HintSize="384,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_6" />
             <Assign DisplayName="Assign ErrorTemplateBackup" sap:VirtualizedContainerService.HintSize="384,60" sap2010:WorkflowViewState.IdRef="Assign_59">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[ErrorTemplateBackup]</OutArgument>
@@ -156,10 +156,10 @@
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">339,350</av:Point>
                   <av:Size x:Key="ShapeSize">262,60</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">470,410 470,439.5</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">470,410 468.5,410 468.5,439.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign DisplayName="Assign Skip Iteration Flag" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign DisplayName="Assign Skip Iteration Flag23" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Boolean">[SkipIterationFlag]</OutArgument>
                 </Assign.To>
@@ -168,26 +168,26 @@
                 </Assign.Value>
               </Assign>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Are we in a Skip Iteration? Then Retrow the exception untill we reach the For Each activity. Else, do the normal exception handling." Condition="[SkipIterationFlag]" DisplayName="Skip Iteration? " sap:VirtualizedContainerService.HintSize="160,204" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                <FlowDecision x:Name="__ReferenceID2" sap2010:Annotation.AnnotationText="Are we in a Skip Iteration? Then Retrow the exception untill we reach the For Each activity. Else, do the normal exception handling." Condition="[SkipIterationFlag]" DisplayName="Skip Iteration? " sap:VirtualizedContainerService.HintSize="157,211" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <av:Point x:Key="ShapeLocation">390,439.5</av:Point>
-                      <av:Size x:Key="ShapeSize">160,204</av:Size>
+                      <av:Size x:Key="ShapeSize">157,211</av:Size>
                       <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                      <av:PointCollection x:Key="TrueConnector">390,541.5 280.5,541.5 280.5,656.5</av:PointCollection>
+                      <av:PointCollection x:Key="TrueConnector">390,545 280.5,545 280.5,656.5</av:PointCollection>
                       <x:String x:Key="TrueLabel">Yes</x:String>
                       <x:String x:Key="FalseLabel">No</x:String>
-                      <av:PointCollection x:Key="FalseConnector">550,541.5 750,541.5 750,606.04</av:PointCollection>
+                      <av:PointCollection x:Key="FalseConnector">547,545 750,545 750,606.04</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <FlowDecision.True>
-                    <FlowDecision x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Did we reached the For Each level?" Condition="[RepetitiveElements.Contains(errorInfo.ActivityInfo.TypeName)]" DisplayName="Repetitive structure top level?" sap:VirtualizedContainerService.HintSize="160,129" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                    <FlowDecision x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Did we reached the For Each level?" Condition="[RepetitiveElements.Contains(errorInfo.ActivityInfo.TypeName)]" DisplayName="Repetitive structure top level?" sap:VirtualizedContainerService.HintSize="160,131" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <av:Point x:Key="ShapeLocation">200.5,656.5</av:Point>
-                          <av:Size x:Key="ShapeSize">160,129</av:Size>
+                          <av:Size x:Key="ShapeSize">160,131</av:Size>
                           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                           <av:PointCollection x:Key="TrueConnector">200.5,721 131,721 131,821.5</av:PointCollection>
                           <av:PointCollection x:Key="FalseConnector">360.5,721 480,721 480,819</av:PointCollection>
@@ -286,11 +286,11 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">650,606.04</av:Point>
-                          <av:Size x:Key="ShapeSize">200,66</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">750,672.04 750,727</av:PointCollection>
+                          <av:Size x:Key="ShapeSize">200,68</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">750,674.04 750,727</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Template Localization" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                      <Sequence DisplayName="Template Localization" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_56">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, x:String))" Name="LocalizationData" />
                           <Variable x:TypeArguments="x:String" Name="UICulture" />
